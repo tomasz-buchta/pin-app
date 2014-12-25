@@ -1,0 +1,28 @@
+- model_class = Pin
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:image)
+      %th= model_class.human_attribute_name(:board)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @pins.each do |pin|
+      %tr
+        %td= link_to pin.id, board_pin_path(@board.id,pin)
+        %td= pin.name
+        %td= link_to(image_tag(pin.image.thumb.url),board_pin_path(@board,pin))
+        %td= pin.board.title
+        %td=l pin.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_board_pin_path(@board,pin), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), board_pin_path(pin,@board), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_board_pin_path(@board), :class => 'btn btn-primary'
+
+
+= paginate @pins

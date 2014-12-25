@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Pin One
+  slug: pin-one
+  image: MyString.jpg
+  board: one
+
+two:
+  name: Pin two
+  slug: pin-two
+  image: MyString.jpg
+  board: one

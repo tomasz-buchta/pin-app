@@ -1,0 +1,25 @@
+= form_for [@board,@pin], html: { class: "form form-horizontal pin" } do |f|
+
+  .form-group
+    = f.label :board, class: 'control-label'
+    .controls
+      = f.collection_select :board_id,Board.all, :id, :title
+    = error_span(@pin[:board_id])
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@pin[:name])
+  .form-group
+    = f.label :image, class: 'control-label'
+    .controls
+      = f.file_field :image#, class: 'form-control', required: true
+    = error_span(@pin[:image])
+  =f.hidden_field :image_cache
+  / .form-group
+  /   = f.label :board_id, class: 'control-label'
+  /   .controls
+  /     = f.text_field :board_id, class: 'form-control', required: true
+  /   = error_span(@pin[:board_id])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), board_pins_path(@board), :class => 'btn btn-default'
