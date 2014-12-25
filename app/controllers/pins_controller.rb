@@ -6,6 +6,10 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
       @pins = @board.pins.order(:created_at).page(params[:page])
+      respond_to do |format|
+        format.html
+        format.js
+      end
   end
 
   # GET /pins/1
