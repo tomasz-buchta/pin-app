@@ -29,6 +29,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'erb2haml'
 
+gem 'quiet_assets', group: :development
+
+# gem 'factory_girl_rails'
+gem 'faker'
+
+#gem 'fabrication'
+
+gem 'database_cleaner'
 # #auto routing nested resources in test
 # gem 'nester'
 

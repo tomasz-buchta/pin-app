@@ -7,6 +7,9 @@
 # Ignore uploaded files
 /public/uploads/
 
+# Ignore seed_images
+/db/seed_images/
+
 # Ignore bundler config.
 /.bundle
 

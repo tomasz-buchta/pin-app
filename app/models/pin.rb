@@ -3,7 +3,7 @@ class Pin < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  paginates_per 5
+  paginates_per 30
 
 
   extend FriendlyId
