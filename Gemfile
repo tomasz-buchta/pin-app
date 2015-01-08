@@ -63,6 +63,10 @@ gem 'rmagick'
 #for slugs and friendly ids
 gem 'friendly_id'
 
+gem 'sunspot', :require =>'sunspot'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -13,10 +13,10 @@ require 'faker'
 
 #seed boards
 
-5.times do |n|
+3.times do |n|
 	a = Board.new
-	a.title = Faker::Commerce.product_name
-	a.description = Faker::Lorem.sentences(1)
+	a.title = Faker::Commerce.department(1)
+	a.description = Faker::Lorem.sentence
 	a.save
 end
 

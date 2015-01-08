@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   root 'boards#index'
 
+  get 'home/index'
+
+  get :search, to: 'home#search', as: 'search'
+
+  #root 'boards#index'
+
   devise_for :users
   #resources :pins
 

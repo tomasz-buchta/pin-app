@@ -1,0 +1,9 @@
+#search-results
+	-if @boards
+		%p="Found #{@boards.length} boards matching your query"
+		-@boards.each do |board|
+			=render 'boards/board', board: board
+	-if @pins
+		%p="Found #{@pins.length} pins matching your query"
+		-@pins.each do |pin|
+			=render 'pins/pin', pin: pin#{pin: pin, @board: pin.board}
